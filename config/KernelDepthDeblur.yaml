@@ -1,0 +1,33 @@
+exp_name: depthstripformer #  <experiment name and  name of directory to save the experimental results and logs>
+train:
+  train_inp: ../ArkitData/upsampling/Training/wide # <path to the directory of blur input images for training>
+  train_dep: ../ArkitData/upsampling/Training/lowres_depth # <path to the directory of depth input images for training>
+  valid_inp: ../ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for validation>
+  valid_gt: ../ArkitData/upsampling/Validation/wide   # <path to the directory of rgb ground truth images for validation>
+  valid_dep: ../ArkitData/upsampling/Validation/lowres_depth # <path to the directory of depth input images for validation>
+  batch_size: 8
+  patch_size: 256
+  epoch: 100
+  lr: 1e-4
+  num_workers: 0
+  save_every: 20 # frequency of save the model
+  prompt_tuning: false #if you want to freeze all the network and only training the adapter, set to true
+  encoder_freezing: false # if you wan to freeze all the encoder,
+
+test:
+  test_inp: ../ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for test>
+  test_gt: ../ArkitData/upsampling/Validation/wide # <path to the directory of rgb ground truth images for test>
+  test_dep: ../ArkitData/upsampling/Validation/lowres_depth # <path to the directory of depth input images for validation>
+  num_workers: 0
+  save: false #if you need save the image
+
+
+model:
+  name: DepthNAFNet
+  setting: false
+  pretrained: /home/ziyao/lidarDeblur/pretrainedModel/restormer/motion_deblurring.pth  # checkpoint location set false if is none
+  gpu_ids: false
+  num_gpus: 1  ### while test or demo please set num_gpu to 1
+  node: 1
+  resume: false #if you are continue training on a unfinished model
+  

@@ -1,0 +1,36 @@
+exp_name: Deblur-Restormer # <experiment name and  name of directory to save the experimental results and logs>
+
+train:
+  warmup: true
+  warmup_epoch: 10
+  lr_warmup: 1e-6
+  train_inp: /home/ziyao/ArkitData/upsampling/Training/wide # <path to the directory of blur input images for training>
+  train_gt: false # <path to the directory of rgb ground truth images for training>
+  train_gt_dep: false
+  valid_inp: /home/ziyao/ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for validation>
+  valid_gt: /home/ziyao/ArkitData/upsampling/Validation/wide  # <path to the directory of rgb ground truth images for validation>
+  batch_size: 1
+  patch_size: 128
+  epoch: 100
+  lr: 1e-4
+  num_workers: 0
+  save_every: 20
+  save_slim: true # re-parameterize the model and save the re-parameterized model
+  is_large : true
+  prompt_tuning: false
+  encoder_freezing: false
+
+test:
+  test_inp: /home/ziyao/ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for test>
+  test_gt: /home/ziyao/ArkitData/upsampling/Validation/wide # <path to the directory of rgb ground truth images for test>
+  num_workers: 0
+  save: false
+
+
+model:
+  name: NADeblurL
+  pretrained: false # <path to the pretrained model>, not used if set false, p.s. each pretrained model has different keys(), e.g. resotormer's parameters are saved in 'params' while others are saved in pth.
+  resume: false
+  gpu_ids: false
+  node: 1
+  num_gpus: 2     ### while test please set num_gpu to 1

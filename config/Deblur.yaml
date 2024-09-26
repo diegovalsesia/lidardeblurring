@@ -1,0 +1,29 @@
+exp_name: blur_rife # <experiment name and  name of directory to save the experimental results and logs>
+
+train:
+  train_inp: /media/HDD/ziyao/gopro/train/input_crops # <path to the directory of blur input images for training>
+  train_gt: /media/HDD/ziyao/gopro/train/target_crops # <path to the directory of rgb ground truth images for training>
+  valid_inp: /media/HDD/ziyao/gopro/test/input # <path to the directory of blur input images for validation>
+  valid_gt: /media/HDD/ziyao/gopro/test/target # <path to the directory of rgb ground truth images for validation>
+  batch_size: 8
+  epoch: 200
+  lr: 1e-3
+  num_workers: 0
+  save_every: 20
+  patch_size: 128
+  save_slim: true # re-parameterize the model and save the re-parameterized model
+
+test:
+  test_inp: /media/HDD/ziyao/dataset/test/color_img # <path to the directory of raw input images for testing>
+  test_gt: /media/HDD/ziyao/dataset/test/color_img # <path to the directory of rgb ground truth images for testing>
+  num_workers: 0
+  save: true
+
+
+model:
+  name: Stripformer
+  pretrained: false # <path to the pretrained model>, not used if set false, p.s. each pretrained model has different keys(), e.g. resotormer's parameters are saved in 'params' while others are saved in pth.
+  resume: false
+  gpu_ids: false
+  node: 1
+  num_gpus: 2
