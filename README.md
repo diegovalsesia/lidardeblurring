@@ -30,13 +30,15 @@ The code uses the ARKitScenes datasets, available for download from [https://git
 ## How to train
 1. config your train hyperparameter in config/*.yaml 
 2. run 
-```python main.py -task train -model_type original -model_task Deblur/DepthDeblur/KernelDeblur/KernelDepthDeblur -device cuda/cpu
+```
+python main.py -task train -model_type original -model_task Deblur/DepthDeblur/KernelDeblur/KernelDepthDeblur -device cuda/cpu
 ```
 
 ## How to test
 1. config your train hyperparameter in config/*.yaml 
 2. run 
-```python main.py -task test -model_type original -model_task Deblur/DepthDeblur/KernelDeblur/KernelDepthDeblur -device cuda/cpu
+```
+python main.py -task test -model_type original -model_task Deblur/DepthDeblur/KernelDeblur/KernelDepthDeblur -device cuda/cpu
 ```
 
 
