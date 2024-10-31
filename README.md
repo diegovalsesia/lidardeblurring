@@ -8,7 +8,7 @@ If you find our work useful in your research, please consider citing:
 @inproceedings{ziyao2024deep,
  author = {Yi, Ziyao and Valsesia, Diego and Bianchi, Tiziano and Magli, Enrico},
  booktitle = {in peer review},
- title = {},
+ title = {Deep Lidar-Guided Image Deblurring},
  year = {2024}
 }
 ```
