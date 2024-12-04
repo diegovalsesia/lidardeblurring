@@ -1,21 +1,6 @@
 # Deep Lidar-Guided Image Deblurring
 This repository contains the official implementation for "Deep Lidar-Guided Image Deblurring"
 
-## Citation
-If you find our work useful in your research, please consider citing: 
-
-```
-@inproceedings{ziyao2024deep,
- author = {Yi, Ziyao and Valsesia, Diego and Bianchi, Tiziano and Magli, Enrico},
- booktitle = {in peer review},
- title = {Deep Lidar-Guided Image Deblurring},
- year = {2024}
-}
-```
-
-## Introduction
-In this paper, we study if the depth information provided by mobile Lidar sensors is useful for the task of image deblurring and how to integrate it with a general approach that transforms any state-of-the-art neural deblurring model into a depth-aware one. To achieve this, we developed a universal adapter structure that efficiently preprocesses the depth information to modulate image features with depth features. Additionally, we applied a continual learning strategy to pretrained encoder-decoder models, enabling them to incorporate depth information as an additional input with minimal extra data requirements. We demonstrate that utilizing true depth information can significantly boost the effectiveness of deblurring algorithms, as validated on a dataset with real-world depth data captured by a smartphone Lidar.
-
 
 ## Requirements
 The code has been tested with the following dependencies:
