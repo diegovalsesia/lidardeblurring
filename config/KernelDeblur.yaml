@@ -4,11 +4,11 @@ train:
   warmup: true
   warmup_epoch: 10
   lr_warmup: 1e-6
-  train_inp: /home/ziyao/ArkitData/upsampling/Training/wide # <path to the directory of blur input images for training>
+  train_inp: ArkitData/upsampling/Training/wide # <path to the directory of blur input images for training>
   train_gt: false # <path to the directory of rgb ground truth images for training>
   train_gt_dep: false
-  valid_inp: /home/ziyao/ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for validation>
-  valid_gt: /home/ziyao/ArkitData/upsampling/Validation/wide  # <path to the directory of rgb ground truth images for validation>
+  valid_inp: ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for validation>
+  valid_gt: ArkitData/upsampling/Validation/wide  # <path to the directory of rgb ground truth images for validation>
   batch_size: 1
   patch_size: 128
   epoch: 100
@@ -21,8 +21,8 @@ train:
   encoder_freezing: false
 
 test:
-  test_inp: /home/ziyao/ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for test>
-  test_gt: /home/ziyao/ArkitData/upsampling/Validation/wide # <path to the directory of rgb ground truth images for test>
+  test_inp: ArkitData/upsampling/Validation/small_set # <path to the directory of blur input images for test>
+  test_gt: ArkitData/upsampling/Validation/wide # <path to the directory of rgb ground truth images for test>
   num_workers: 0
   save: false
 
