@@ -21,6 +21,7 @@ _all__ = {
     'DepthNAFNet',
     'DepthNADeblurL',
     'DepthNAFNet',
+    'CatRestormer',
 
     'import_module'
 }
