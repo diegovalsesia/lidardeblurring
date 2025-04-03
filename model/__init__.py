@@ -11,6 +11,8 @@ from .archs.DeblurDiNATL import NADeblurL
 from .archs.depthDeblurDiNATL import DepthNADeblurL
 from .archs.stripformer import Stripformer
 from .archs.depthstripformer import DepthStripformer
+from .archs.catrestormer import CatRestormer
+
 _all__ = {
     'import_model',
     'Restormer',
