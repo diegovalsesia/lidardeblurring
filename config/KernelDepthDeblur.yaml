@@ -25,7 +25,7 @@ test:
 model:
   name: DepthNAFNet
   setting: false
-  pretrained: /home/ziyao/lidarDeblur/pretrainedModel/restormer/motion_deblurring.pth  # checkpoint location set false if is none
+  pretrained: motion_deblurring.pth  # checkpoint location set false if is none
   gpu_ids: false
   num_gpus: 1  ### while test or demo please set num_gpu to 1
   node: 1
