@@ -19,7 +19,7 @@ class KernelDepthDeblurData(torch.utils.data.Dataset):
         self.depth_path = depth_path
         self.gt_path = gt_path
         self.is_patch = is_patch
-        ker_mat = loadmat("/home/ziyao/ArkitData/Levin09_v7.mat")
+        ker_mat = loadmat("./Levin09_v7.mat")
         ker_mat = ker_mat['kernels']
         self.get_ker = lambda idx: ker_mat[0, idx]
         self.gt_depth_path = gt_depth_path
