@@ -1,0 +1,52 @@
+exp_name: restormer # <experiment name and  name of directory to save the experimental results and logs>
+
+train:
+  warmup: true
+  warmup_epoch: 10
+  lr_warmup: 1e-5
+  train_inp: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Training/wide # <path to the directory of blur input images for training>
+  train_gt: false # <path to the directory of rgb ground truth images for training>
+  train_gt_dep: false
+  valid_inp: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Validation/small_set # <path to the directory of blur input images for validation>
+  valid_gt: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Validation/wide  # <path to the directory of rgb ground truth images for validation>
+  batch_size: 3
+  patch_size: 256
+  epoch: 200
+  lr: 1e-4
+  num_workers: 0
+  save_every: 10
+  save_slim: true # re-parameterize the model and save the re-parameterized model
+  is_large : true
+  prompt_tuning: false
+  encoder_freezing: false
+
+test:
+  test_inp: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Validation/small_set # <path to the directory of blur input images for test>
+  test_dep: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Validation/lowres_depth # <path to the directory of depth input images for validation>
+  test_gt: /home/valsesia/Scripts/ARKitScenes/data/upsampling/upsampling/Validation/wide
+  num_workers: 0
+  save: true #if you need save the image
+
+
+# for training
+model:
+  name: Restormer 
+  pretrained: false # <path to the pretrained model>, not used if set false, p.s. each pretrained model has different keys(), e.g. resotormer's parameters are saved in 'params' while others are saved in pth.
+  resume: false
+  gpu_ids: false
+  node: 1
+  num_gpus: 4     ### while test please set num_gpu to 1
+  testing_from_dp: False
+
+
+# for testing
+# model:
+#   name: Stripformer
+#   setting: false
+#   pretrained: /home/valsesia/Scripts/lidardeblurring_denoise/pretrainedModel/stripformer/deblur_denoise/stripformer.pth # checkpoint location set false if is none
+#   gpu_ids: false
+#   num_gpus: 1  ### while test or demo please set num_gpu to 1
+#   node: 1
+#   resume: true #if you are continue training on a unfinished model
+#   testing_from_dp: false # discard module prefix when loading checkpoint due to training with dataparallel
+  
