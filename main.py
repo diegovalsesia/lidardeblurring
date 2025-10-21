@@ -47,7 +47,7 @@ def train(gpu_id, opt, logger):
     if opt.config['train']['encoder_freezing']:
          for name, para in net.named_parameters():
              if 'encoder' or 'down' in name:
-                para.required_grad = False
+                para.requires_grad = False
     net.train()
     # logger.info(net)
     # Phase Warming-up
